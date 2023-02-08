@@ -12,6 +12,9 @@ app.get("/", (req, res) => {
 const carsController = require("./controllers/carsController");
 app.use("/cars", carsController);
 
+const collectionsController = require("./controllers/collectionsController");
+app.use("/collections", collectionsController);
+
 app.get("*", (req, res) => {
   res.status(404).json({ error: "page not found" });
 });

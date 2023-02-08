@@ -16,12 +16,12 @@ cars.get("/", async (req, res) => {
 cars.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const car = await db.any("SELECT * FROM cars WHERE id =$1", id);
+    const car = await db.one("SELECT * FROM cars WHERE id =$1", id);
     console.log(car);
     res.json(car);
   } catch (error) {
     console.log(error.message);
-    res.status(400).json({ error: "something went wrong" });
+    res.status(404).json({ error: "car not found" });
   }
 });
 
