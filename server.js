@@ -4,5 +4,5 @@ require("dotenv").config();
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
-  console.log("Server started on Port" + PORT);
+  console.log("Server started on Port " + PORT);
 });
