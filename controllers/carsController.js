@@ -27,7 +27,15 @@ cars.get("/:id", async (req, res) => {
 
 cars.post("/", async (req, res) => {
   try {
-    const { name, quantity, year, color, image_link, collection_id } = req.body;
+    console.log(req.body);
+    const {
+      name,
+      quantity,
+      year,
+      color,
+      image_link,
+      collection: collection_id,
+    } = req.body;
     const createdCar = await db.one(
       "INSERT INTO cars(name,quantity,year,color,image_link,collection_id) VALUES($1,$2,$3,$4,$5,$6) RETURNING *",
       [name, quantity, year, color, image_link, collection_id]

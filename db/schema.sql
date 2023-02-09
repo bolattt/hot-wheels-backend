@@ -12,8 +12,8 @@ CREATE TABLE cars (
     id SERIAL PRIMARY KEY, 
     name VARCHAR(40) NOT NULL,
     quantity INT,
-    year INT, 
-    color VARCHAR(15),
+    series VARCHAR(60), 
+    SKU VARCHAR(5),
     image_link TEXT,
     collection_id INT NOT NULL,
     FOREIGN KEY (collection_id) REFERENCES collections(id) 
