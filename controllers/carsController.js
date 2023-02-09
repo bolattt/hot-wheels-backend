@@ -31,14 +31,14 @@ cars.post("/", async (req, res) => {
     const {
       name,
       quantity,
-      year,
-      color,
+      series,
+      sku,
       image_link,
       collection: collection_id,
     } = req.body;
     const createdCar = await db.one(
-      "INSERT INTO cars(name,quantity,year,color,image_link,collection_id) VALUES($1,$2,$3,$4,$5,$6) RETURNING *",
-      [name, quantity, year, color, image_link, collection_id]
+      "INSERT INTO cars(name,quantity,series,sku,image_link,collection_id) VALUES($1,$2,$3,$4,$5,$6) RETURNING *",
+      [name, quantity, series, sku, image_link, collection_id]
     );
     console.log(createdCar);
     res.json(createdCar);
@@ -51,10 +51,10 @@ cars.post("/", async (req, res) => {
 cars.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, quantity, year, color, image_link, collection_id } = req.body;
+    const { name, quantity, series, sku, image_link, collection_id } = req.body;
     const updatedCar = await db.one(
-      "UPDATE cars SET name = $1, quantity = $2, year = $3, color=$4, image_link=$5,collection_id=$6 WHERE id=$7 RETURNING *",
-      [name, quantity, year, color, image_link, collection_id, id]
+      "UPDATE cars SET name = $1, quantity = $2, series = $3, sku=$4, image_link=$5,collection_id=$6 WHERE id=$7 RETURNING *",
+      [name, quantity, series, sku, image_link, collection_id, id]
     );
     console.log(updatedCar);
     res.json(updatedCar);
