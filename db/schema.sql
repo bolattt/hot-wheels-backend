@@ -15,6 +15,6 @@ CREATE TABLE cars (
     series VARCHAR(60), 
     SKU VARCHAR(5),
     image_link TEXT,
-    collection_id INT NOT NULL,
+    collection_id INT,
     FOREIGN KEY (collection_id) REFERENCES collections(id) 
 );
