@@ -68,6 +68,7 @@ collections.delete("/:id", async (req, res) => {
     );
     res.json(deletedCollection);
   } catch (error) {
+    console.log(error.message);
     res.status(400).json({ error: "something went wrong" });
   }
 });
