@@ -19,3 +19,4 @@ CREATE TABLE cars (
     collection_id INT,
     FOREIGN KEY (collection_id) REFERENCES collections(id) 
 );
+

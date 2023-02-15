@@ -30,10 +30,10 @@ collections.get("/:id", async (req, res) => {
 
 collections.post("/", async (req, res) => {
   try {
-    const { name } = req.body;
+    const { name, image_link } = req.body;
     const createdcollection = await db.one(
-      "INSERT INTO collections(name) VALUES($1) RETURNING *",
-      name
+      "INSERT INTO collections(name,image_link) VALUES($1,$2) RETURNING *",
+      [name, image_link]
     );
     console.log(createdcollection);
     res.json(createdcollection);
