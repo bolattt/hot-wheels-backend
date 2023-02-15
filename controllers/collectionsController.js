@@ -20,7 +20,9 @@ collections.get("/:id", async (req, res) => {
       "SELECT * FROM collections WHERE id =$1",
       id
     );
+    const cars = await db.any("SELECT * FROM cars WHERE collection_id=$1", id);
     console.log(collection);
+    collection.cars = cars;
     res.json(collection);
   } catch (error) {
     console.log(error.message);
