@@ -46,10 +46,10 @@ collections.post("/", async (req, res) => {
 collections.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const { name } = req.body;
+    const { name, image_link } = req.body;
     const updatedcollection = await db.one(
-      "UPDATE collections SET name = $1 WHERE id=$2 RETURNING *",
-      [name, id]
+      "UPDATE collections SET name = $1, image_link=$2 WHERE id=$3 RETURNING *",
+      [name, image_link, id]
     );
     console.log(updatedcollection);
     res.json(updatedcollection);
