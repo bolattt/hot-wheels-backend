@@ -5,7 +5,8 @@ CREATE DATABASE hotwheels_db;
 
 CREATE TABLE collections ( 
     id SERIAL PRIMARY KEY,
-    name VARCHAR(40) NOT NULL
+    name VARCHAR(40) NOT NULL,
+    image_link TEXT
 ); 
 
 CREATE TABLE cars ( 

@@ -1,13 +1,13 @@
 \c hotwheels_db;
 
-INSERT INTO collections (name)
+INSERT INTO collections (name,image_link)
 VALUES 
-    ('Fast and Furious'),
-    ('Retro Cars'),
-    ('Treasure Hunt'),
-    ('2022 HotWheels'),
-    ('HW Racing Series'),
-    ('Speed Machines');
+    ('Fast and Furious','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg'),
+    ('Retro Cars','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg'),
+    ('Treasure Hunt','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg'),
+    ('2022 HotWheels','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg'),
+    ('HW Racing Series','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg'),
+    ('Speed Machines','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg');
 
 
 INSERT INTO cars (name, quantity, series, SKU, image_link, collection_id)
