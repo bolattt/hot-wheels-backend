@@ -17,6 +17,6 @@ CREATE TABLE cars (
     SKU VARCHAR(5),
     image_link TEXT,
     collection_id INT,
-    FOREIGN KEY (collection_id) REFERENCES collections(id) 
+    FOREIGN KEY (collection_id) REFERENCES collections(id) ON DELETE SET NULL
 );
 
