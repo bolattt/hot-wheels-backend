@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const carsController = require("./controllers/carsController");
 const collectionsController = require("./controllers/collectionsController");
+const usersController = require("./controllers/usersController");
 
 app.use(cors());
 app.use(express.json());
@@ -12,6 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/cars", carsController);
+app.use("/users", usersController);
 app.use("/collections", collectionsController);
 
 app.get("*", (req, res) => {

@@ -64,9 +64,6 @@ collections.put("/:id", async (req, res) => {
 collections.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    // const cars = await db.any("SELECT * FROM cars WHERE collection_id=$1", id);
-    // const upddateCars = await db.any("UPDATE cars SET collection_id=$1 WHERE ")
-
     const deletedCollection = await db.one(
       "DELETE FROM collections WHERE id= $1 RETURNING *",
       id

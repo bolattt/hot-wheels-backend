@@ -3,10 +3,16 @@ CREATE DATABASE hotwheels_db;
 
 \c hotwheels_db; 
 
+CREATE TABLE users (
+    id  TEXT PRIMARY KEY
+);
+
 CREATE TABLE collections ( 
     id SERIAL PRIMARY KEY,
     name VARCHAR(40) NOT NULL,
-    image_link TEXT
+    image_link TEXT,
+    user_id TEXT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
 ); 
 
 CREATE TABLE cars ( 

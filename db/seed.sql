@@ -1,13 +1,15 @@
 \c hotwheels_db;
 
-INSERT INTO collections (name,image_link)
+INSERT INTO users(id) VALUES('FIREBASE1'), ('FIREBASE2');
+
+INSERT INTO collections (name,image_link,user_id)
 VALUES 
-    ('Fast and Furious','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg'),
-    ('Retro Cars','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg'),
-    ('Treasure Hunt','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg'),
-    ('2022 HotWheels','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg'),
-    ('HW Racing Series','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg'),
-    ('Speed Machines','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg');
+    ('Fast and Furious','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg','FIREBASE1'),
+    ('Retro Cars','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg','FIREBASE1'),
+    ('Treasure Hunt','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg','FIREBASE1'),
+    ('2022 HotWheels','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg','FIREBASE2'),
+    ('HW Racing Series','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg','FIREBASE2'),
+    ('Speed Machines','https://res.cloudinary.com/djwhc7rvy/image/upload/v1676420670/HW_rectangle_tall_2016_guide_7_ub9ejq.jpg','FIREBASE2');
 
 
 INSERT INTO cars (name, quantity, series, SKU, image_link, collection_id)
