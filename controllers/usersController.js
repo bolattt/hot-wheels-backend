@@ -2,6 +2,23 @@ const express = require("express");
 const users = express.Router();
 const db = require("../db/dbConfig");
 
+users.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  try {
+    const collections = await db.any(
+      "SELECT * FROM collections  WHERE user_id = $1",
+      id
+    );
+    const cars = await db.any("SELECT * FROM cars WHERE user_id=$1", id);
+    const json = { collections, cars };
+    res.json(json);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ error: "something went wrong" });
+  }
+});
+
 users.post("/", async (req, res) => {
   try {
     const { uid } = req.body;

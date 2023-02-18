@@ -20,9 +20,9 @@ CREATE TABLE cars (
     name VARCHAR(40) NOT NULL,
     quantity INT,
     series VARCHAR(60), 
-    SKU VARCHAR(5),
+    SKU VARCHAR(15),
     image_link TEXT,
-    collection_id INT,
-    FOREIGN KEY (collection_id) REFERENCES collections(id) ON DELETE SET NULL
+    collection_id INT REFERENCES collections(id) ON DELETE SET NULL,
+    user_id TEXT REFERENCES users(id)
 );
 
